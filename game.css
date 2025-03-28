@@ -1,37 +1,114 @@
+
+html,
+body {
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #D9D9D9;
+}
 main {
-  width: 100%;
-  height: 95vh;
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  grid-template-rows: 2fr 6fr 1fr;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  height: 90vh;
+  width: 100vw;
 }
-footer {
-  height: 5vh;
+header {
+  display: flex;
+  flex-direction: row;
+  grid-row: 1;
+  grid-column: 1 / 3;
+}
+#title {
+  display: flex;
+  flex-direction: column;
+  margin-top:25px; 
+}
+header h1 {
+  padding-left:5px;
+  font-family: "Inika", serif;
+  font-weight: 700;
+  font-size:35px;
+  font-style: normal;
+  color:#6e352c;
+  margin:0;
+}
+nav {
+  width: 100%;
+
+}
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
   margin: 0 auto;
+  text-align: center;
+  padding:5px;
+
 }
-#buttons {
-  grid-row: 3;
-  grid-column: 2;
-  justify-self: end;
+nav ul li {
+  width:90px;
+  height:30px;
+  align-content: center;
+  background-color: #8c5e35;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px #000;
+}
+#logo {
+  width:100px;
+}
+#icon1 {
+  grid-row:2;
+  position: absolute;
+  width: 350px;
+  right: -210px;
+  top: 25%;
+}
+#icon2 {
+  position: absolute;
+  width: 350px;
+  top: 45%;
+  right: -210px;
+}
+#sidebar {
+  grid-row: 1 / -1;
+  grid-column: 3;
+}
+#icon1,
+#icon2 {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 #rocks {
-  width: fit-content;
-  height: fit-content;
-  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(3, min-content); 
+  justify-content: center; 
+  align-content: center; 
+  gap: 15px; 
+  width: 90%;
+  height: 100%;
+  background-color: #8c5e35;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px #000;
+  padding: 20px;
   grid-row: 2;
-  grid-column: 2;
+  grid-column:2;
 }
+
 #status {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 3;
 }
+.rock:hover {
+  transform: scale(1.1); 
+}
+
 .rock.selected {
-  background-color: rgb(233, 233, 233);
+  background-color: rgba(255, 255, 255, 0.5); 
 }
 .row {
   display: flex;
-  justify-content: center;
+  justify-self: center;
   margin: 10px 0;
+  align-content: center;
 }
 .rock {
   width: 90px;
@@ -41,4 +118,17 @@ footer {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+#buttons {
+  grid-row: 3;
+  grid-column: 2;
+}
+footer {
+  display: flex;
+  justify-content: space-between; /* Moves Help button to the right */
+  align-items: center; /* Aligns items vertically */
+  padding: 10px;
+}
+#helpButton {
+  display: block;
 }
