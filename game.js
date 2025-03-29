@@ -80,9 +80,9 @@ function updateUI() {
   const icon2 = document.getElementById("icon2");
 
   if (currentPlayer === 1) {
-    icon1.style.transform = "translateX(-180px) scale(1.2)"; // Slight pop out
+    icon1.style.transform = "translateX(-180px) scale(1.2)"; // 
     icon1.style.opacity = "1";
-    icon2.style.transform = "translateX(0) scale(1)"; // Reset other icon
+    icon2.style.transform = "translateX(0) scale(1)"; 
     icon2.style.opacity = "0.5";
   } else {
     icon1.style.transform = "translateX(0) scale(1)";
@@ -132,6 +132,6 @@ function resetGame() {
 }
 
 document.getElementById("playButton").addEventListener("click", playTurn);
-document.getElementById("reset").addEventListener("click", resetGame);
+document.getElementById("resetButton").addEventListener("click", resetGame);
 
 updateUI();
