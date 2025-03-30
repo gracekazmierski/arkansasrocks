@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+  box-sizing: border-box; /* Includes padding and border in width calculations */
+}
 html,
 body {
+  max-width: 100%; 
+  height: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -11,7 +16,7 @@ main {
   grid-template-columns: 1fr 2.5fr 1fr;
   grid-template-rows: auto 3fr auto;
   height: 90vh;
-  width: 100vw;
+
 }
 header {
   display: flex;
@@ -28,12 +33,6 @@ header div {
   flex-direction: column; 
   align-items: flex-start; 
   gap: 5px;
-  
-}
-header img {
-  width:50px;
-  height:auto;
-
 }
 h1 {
   font-family: 'Bebas Neue', sans-serif; 
@@ -90,15 +89,15 @@ li a {
 #icon1 {
   grid-row:2;
   position: absolute;
-  width: 350px;
-  right: -210px;
+  width: 300px;
+  right: calc(-195px + 0.5vw);
   top: 25%;
 }
 #icon2 {
   position: absolute;
-  width: 350px;
+  width: 300px;
   top: 45%;
-  right: -210px;
+  right: calc(-195px + 0.5vw);
 }
 #sidebar {
   grid-row: 1 / -1;
@@ -138,8 +137,8 @@ li a {
   align-content: center;
 }
 .rock {
-  width: 4.5vw;
-  height: 4.5vw;
+  width: 6vw;
+  height: 4vw;
   padding: 10px;
   cursor: pointer;
   background-size: contain;
@@ -310,6 +309,41 @@ footer p {
   }
   #copyright {
     margin:0;
+  }
+  
+}
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+  #icon1 {
+    top:10px;
+    width:225px;
+    right:-165px;
+  }
+  #icon2 {
+    width:225px;
+    top:105px;
+    right:-165px
+  }
+  #logo {
+    width:75px;
+    height:auto;
+  }
+  h1 {
+    padding-top:5px;
+    font-size: 40px; 
+  }
+  header {
+    margin-bottom:70px;
+  }
+  #rocks {
+    width:100%;
+    height:100%;
+  }
+  .rock {
+    width:7vw;
+    height:8vw;
+  }
+  footer p {
+    font-size: 1.25vw;
   }
 }
   

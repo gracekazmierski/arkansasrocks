@@ -15,8 +15,8 @@ export function updateUI(rows) {
   const screenWidth = window.innerWidth;
 
   // Adjust translate amount based on screen size with a max limit
-  const baseTranslate = screenWidth <= 1000 ? screenWidth * 0.16 : screenWidth * 0.25;
-  const translateAmount = Math.min(baseTranslate, 175); // Cap movement to 150px max
+  const baseTranslate = screenWidth <= 1024 ? screenWidth * 0.25 : screenWidth * 0.2;
+  const translateAmount = Math.min(baseTranslate, 150);
 
   if (gameState.currentPlayer === 1) {
     icon1.style.transform = `translateX(${-translateAmount}px) scale(1.2)`;
