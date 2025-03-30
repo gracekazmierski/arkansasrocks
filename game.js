@@ -1,137 +1,72 @@
-let rows = [
-  document.querySelectorAll("#row1 .rock"),
-  document.querySelectorAll("#row2 .rock"),
-  document.querySelectorAll("#row3 .rock"),
-];
+export const gameState = {
+  currentPlayer: 1,
+  rowStates: [3, 5, 7],
+  currentRow: -1,
+  selectedRocks: 0,
+};
 
-let currentPlayer = 1;
-let rowStates = [3, 5, 7];
-let currentRow = -1;
-let selectedRocks = 0;
-
-function selectRock(rock, rowIndex) {
-  if (currentRow === -1 || currentRow === rowIndex) {
+export function selectRock(rock, rowIndex, rows) {
+  if (gameState.currentRow === -1 || gameState.currentRow === rowIndex) {
     rock.classList.toggle("selected");
-    updateSelection(rowIndex);
-
-    if (selectedRocks === 0) {
-      currentRow = -1;
-    } else {
-      currentRow = rowIndex;
-    }
-  } else if (currentRow !== rowIndex && selectedRocks > 0) {
+    updateSelection(rowIndex, rows);
+    gameState.currentRow = gameState.selectedRocks === 0 ? -1 : rowIndex;
+  } else {
     alert("You can only select rocks from one row at a time.");
   }
 }
 
-function updateSelection(rowIndex) {
-  selectedRocks = 0;
-  rows[rowIndex].forEach((rock) => {
-    if (rock.classList.contains("selected")) {
-      selectedRocks++;
-    }
-  });
-
-  if (selectedRocks === 0) {
-    currentRow = -1;
-  }
+export function updateSelection(rowIndex, rows) {
+  gameState.selectedRocks = rows[rowIndex].filter(rock => rock.classList.contains("selected")).length;
 }
 
-function playTurn() {
-  if (selectedRocks === 0 || currentRow === -1) {
+export function playTurn(rows, updateUI, checkGameOver, switchPlayer) {
+  if (gameState.selectedRocks === 0 || gameState.currentRow === -1) {
     alert("Please select at least one rock before playing your turn.");
     return;
   }
 
-  if (selectedRocks <= rowStates[currentRow]) {
-    rows[currentRow].forEach((rock) => {
+  if (gameState.selectedRocks <= gameState.rowStates[gameState.currentRow]) {
+    rows[gameState.currentRow].forEach((rock) => {
       if (rock.classList.contains("selected")) {
         rock.classList.remove("selected");
       }
     });
 
-    rowStates[currentRow] -= selectedRocks;
+    gameState.rowStates[gameState.currentRow] -= gameState.selectedRocks;
     updateUI();
     checkGameOver();
     switchPlayer();
   }
 }
 
-function updateUI() {
-  for (let i = 0; i < rows.length; i++) {
-    rows[i].forEach((rock, index) => {
-      if (index < rowStates[i]) {
-        rock.style.display = "block";
-      } else {
-        rock.style.display = "none";
-      }
-    });
-
-    rows[i].forEach((rock) => {
-      if (currentRow !== -1 && i !== currentRow) {
-        rock.style.pointerEvents = "none";
-      } else {
-        rock.style.pointerEvents = "auto";
-      }
-    });
+export function checkGameOver(resetGame, rows, updateUI) {
+  if (gameState.rowStates.every(state => state === 0)) {
+    setTimeout(() => {
+      alert(`Player ${gameState.currentPlayer} loses!`);
+      resetGame(rows, updateUI); 
+    }, 100);
   }
-
-  const icon1 = document.getElementById("icon1");
-  const icon2 = document.getElementById("icon2");
-
-  if (currentPlayer === 1) {
-    icon1.style.transform = "translateX(-180px) scale(1.2)"; // 
-    icon1.style.opacity = "1";
-    icon2.style.transform = "translateX(0) scale(1)"; 
-    icon2.style.opacity = "0.5";
-  } else {
-    icon1.style.transform = "translateX(0) scale(1)";
-    icon1.style.opacity = "0.5";
-    icon2.style.transform = "translateX(-180px) scale(1.2)";
-    icon2.style.opacity = "1";
-  }
-
-  document.getElementById("status").innerText = `Player ${currentPlayer}'s Turn`;
 }
 
-function switchPlayer() {
-  currentPlayer = currentPlayer === 1 ? 2 : 1;
-  currentRow = -1;
-  selectedRocks = 0;
+
+export function switchPlayer(updateUI) {
+  gameState.currentPlayer = gameState.currentPlayer === 1 ? 2 : 1;
+  gameState.currentRow = -1;
+  gameState.selectedRocks = 0;
   updateUI();
 }
 
-function checkGameOver() {
-  if (rowStates.every((state) => state === 0)) {
-    alert(`Player ${currentPlayer} loses!`);
-    resetGame();
-  }
+export function resetGame(rows, updateUI) {
+  gameState.rowStates = [3, 5, 7];
+  gameState.selectedRocks = 0;
+  gameState.currentRow = -1;
+  gameState.currentPlayer = 1; // Reset to Player 1
+
+  // Ensure all rocks are unselected and visible
+  rows.forEach(row => row.forEach(rock => {
+    rock.classList.remove("selected");
+    rock.style.display = "block"; 
+  }));
+
+  updateUI(rows); 
 }
-
-document.querySelectorAll(".row").forEach((row, rowIndex) => {
-  row.addEventListener("click", (e) => {
-    if (e.target.classList.contains("rock")) {
-      selectRock(e.target, rowIndex);
-    }
-  });
-});
-
-function resetGame() {
-  switchPlayer();
-  rowStates = [3, 5, 7];
-  selectedRocks = 0;
-  currentRow = -1;
-
-  rows.forEach((row) => {
-    row.forEach((rock) => {
-      rock.classList.remove("selected");
-    });
-  });
-
-  updateUI();
-}
-
-document.getElementById("playButton").addEventListener("click", playTurn);
-document.getElementById("resetButton").addEventListener("click", resetGame);
-
-updateUI();

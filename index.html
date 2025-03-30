@@ -7,14 +7,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="game.css" />
-    <script src="game.js" defer></script>
+    <script type="module" src="main.js"></script>
     <title>Arkansas Rocks Game</title>
   </head>
   <body>
     <main>
       <header>
   <img src="images/mr-arkansas.png" alt="Mr. Arkansas" id="logo" />
-  <div>
+  <div id = "header-text">
     <h1>ARKANSAS<br><span>ROCKS!</span></h1>
     <nav>
       <ul>
@@ -93,8 +93,8 @@
           ></div>
         </div>
       </div>
+      <div id="status">Player 1's Turn</div>
       <div id="sidebar">
-        <div id="status">Player 1's Turn</div>
         <img src="images/player-one.png" alt="player one icon" id="icon1">
         <img src="/images/player-two.png" alt="player two icon" id="icon2">
       </div>
