@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+  --text-color: #D9D9D9;
+  --player-red: #b60101;
+  --player-blue: #1b4d8f;
+  --box-main: #1E2E3E;
+}
+
 * {
-  box-sizing: border-box; /* Includes padding and border in width calculations */
+  box-sizing: border-box;
 }
 html,
 body {
@@ -9,7 +16,7 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  background-color: #D9D9D9;
+  background-color: var(--text-color);
 }
 main {
   display: grid;
@@ -26,7 +33,7 @@ header {
   height: fit-content;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 1px 3px #000;
-  background-color: #d0d0d0;
+  background-color: var(--text-color);
 }
 header div {
   display: flex;
@@ -44,10 +51,10 @@ h1 {
   line-height: 1;
   color: #FEAC4E;
   text-shadow: 
-    -3px -3px 0 #1E2E3E,  
-    3px -3px 0 #1E2E3E, 
-    -3px 3px 0 #1E2E3E, 
-    3px 3px 0 #1E2E3E;
+    -3px -3px 0 var(--box-main),  
+    3px -3px 0 var(--box-main), 
+    -3px 3px 0 var(--box-main), 
+    3px 3px 0 var(--box-main)
 }
 
 h1 span {
@@ -71,13 +78,13 @@ nav ul li {
   width:90px;
   height:30px;
   align-content: center;
-  background-color: #1e2e3e;
+  background-color: var(--box-main);
   border-radius: 5px;
   box-shadow: 0px 10px 15px #000;
   cursor:pointer;
 }
 li a {
-  color:#D9D9D9;
+  color:var(--text-color);
   text-decoration: none;
   font-family: 'Georgia', serif;
   font-size:15px;
@@ -160,19 +167,18 @@ li a {
   font-weight: 600;
   letter-spacing: 0px;
   line-height: 1;
-  color: #D9D9D9;
+  color: var(--text-color);
   width: 125px;
   height: 50px;
-  background-color: #1b4d8f;
+  background-color: var(--player-blue);
   border-radius: 5px;
   border:none;
-  color: #D9D9D9;;
   text-decoration: none;
   text-align: center;
   line-height: 30px; 
 }
 #resetButton {
-  background-color:#b60101;
+  background-color:var(--player-red);
 }
 footer {
   font:'Georgia', serif;
@@ -258,11 +264,11 @@ footer p {
     visibility: visible;
     margin: 0 auto;
     text-align: center;
-    background-color: #1E2E3E;
+    background-color: var(--box-main);
     height: fit-content;
     padding:10px;
     border-radius: 5px;
-    color:#D9D9D9;
+    color:var(--text-color);
     font-family: 'Bebas Neue', sans-serif; 
     font-size:5vw;
     letter-spacing: 2px;
@@ -346,4 +352,3 @@ footer p {
     font-size: 1.25vw;
   }
 }
-  

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function checkGameOverAndReset() {
     checkGameOver(resetGame, rows, updateUI);
-    }
+}
 
-  updateUI(rows); // Initial UI update
+  updateUI(rows);
 });
