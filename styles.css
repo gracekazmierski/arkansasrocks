@@ -1,0 +1,112 @@
+:root {
+  --text-color: #D9D9D9;
+  --player-red: #b60101;
+  --box-main: #1E2E3E;
+  --jacket-blue: #1e2e3e;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: var(--text-color);
+}
+#main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  margin: 0px 15vh 5vh 15vh;
+}
+header {
+  background-color: #4A4A4A;
+  margin-top:1em;
+  padding:2.5em;
+  grid-column: 1 ;
+  grid-row: 1;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px #000;
+  width:fit-content;
+}
+h1 {
+  font-family: "Bebas Neue", sans-serif;
+  padding-top: 5px;
+  margin: 0;
+  font-size: 5em;
+  font-weight: 900;
+  letter-spacing: 3px;
+  line-height: 1;
+  color: #feac4e;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000;
+}
+h1 span {
+  color: #e66918;
+}
+nav ul {
+  display:flex;
+  flex-direction: row;
+  gap:6em;
+  list-style: none;
+  justify-content: center;
+  
+}
+nav ul li a {
+  font-size:2em;
+  color:var(--text-color);
+  
+  border-radius: 5px;
+}
+main {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 2fr 0.5fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+  margin: 5vh 0vh 5vh 0vh;
+  column-gap: 6vh;
+  background-color: #8c5e35;
+  padding:0px 10px 0px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px #000;
+}
+
+#main-text {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 20px;
+  align-items: center;
+}
+#main-text p {
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/* Move image to second column */
+#mr-arkansas {
+  align-self: end;
+  height: 100%;
+  width: 100%;
+  grid-column: 2;
+  width: 100%;
+  transform: scaleX(-1);
+  object-fit: contain;
+  padding-left: 15px;
+}
+footer {
+  border: 1px solid black;
+  border-radius: 15px;
+  grid-column: 1 / -1;
+  grid-row: 3;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+footer p {
+  font-size: 1.2em;
+  text-align: center;
+}
+#copyright {
+  align-self: flex-end;
+}

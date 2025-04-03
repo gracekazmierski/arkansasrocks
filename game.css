@@ -25,41 +25,40 @@ main {
   height: 90vh;
 }
 header {
+  grid-row: 1;
+  grid-column: 1 / -1;
+  margin: 1em;
   display: flex;
-  align-items: flex-start; 
-  gap: 10px; 
+  align-items: flex-start;
+  gap: 10px;
+  padding: 1em;
   width: fit-content;
-  height: fit-content;
-  border-radius: 0px 0px 5px 5px;
-  box-shadow: 0px 1px 3px #000;
-  background-color: var(--text-color);
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px #000;
+  background-color: #4a4a4a;
 }
 header div {
   display: flex;
-  flex-direction: column; 
-  align-items: flex-start; 
+  flex-direction: column;
+  align-items: flex-start;
   gap: 5px;
 }
 h1 {
-  font-family: 'Bebas Neue', sans-serif; 
-  padding-top:5px;
-  margin:0;
-  font-size: 40px; 
+  font-family: "Bebas Neue", sans-serif;
+  padding-top: 5px;
+  margin: 0;
+  font-size: 55px;
   font-weight: 900;
   letter-spacing: 3px;
   line-height: 1;
-  color: #FEAC4E;
-  text-shadow: 
-    -3px -3px 0 var(--box-main),  
-    3px -3px 0 var(--box-main), 
-    -3px 3px 0 var(--box-main), 
-    3px 3px 0 var(--box-main)
+  color: #feac4e;
+  text-shadow: -3px -3px 0 var(--box-main), 3px -3px 0 var(--box-main),
+    -3px 3px 0 var(--box-main), 3px 3px 0 var(--box-main);
 }
 
 h1 span {
-  color: #E66918;
+  color: #e66918;
 }
-
 nav {
   width: 100%;
 }
@@ -70,27 +69,25 @@ nav ul {
   list-style: none;
   margin: 0 auto;
   text-align: center;
-  padding:5px;
-
+  padding-left: 5px;
 }
 nav ul li {
-  width:90px;
-  height:30px;
+  width: 10em;
+  height: 40px;
   align-content: center;
-  background-color: var(--box-main);
+  background-color: #9b704d;
   border-radius: 5px;
   box-shadow: 0px 10px 15px #000;
-  cursor:pointer;
+  cursor: pointer;
 }
 li a {
-  color:var(--text-color);
+  color: var(--text-color);
   text-decoration: none;
-  font-family: 'Georgia', serif;
-  font-size:15px;
+  font-family: "Georgia", serif;
+  font-size: 1.5em;
 }
 #logo {
-  width:75px;
-  height:auto;
+  width: 125px;
 }
 #icon1 {
   grid-row:2;
@@ -222,7 +219,8 @@ footer p {
     max-width: 100%;
   }
   header {
-    width: 100%;
+    margin: 10px auto;
+    width: 80%;
     justify-content: center;
     grid-column: 2;
     height:fit-content;
@@ -235,6 +233,10 @@ footer p {
   nav ul li {
     box-shadow: 0px 5px 6px #000;
     width:20vw;
+
+  }
+  nav ul li a {
+    font-size:3vw;
   }
   header div {
     flex-direction: row;
@@ -258,7 +260,7 @@ footer p {
     grid-row:2;
     width:90%;
     grid-row:2;
-    height:80%;
+    height:70%;
     align-self: center;
     justify-self: center;
     margin-top:15vw;
@@ -286,7 +288,7 @@ footer p {
   }
   .rock {
     flex: 1; 
-    width:10vw;
+    width:11vw;
     height:9vw;
     padding:0;
     cursor: pointer;
@@ -303,7 +305,7 @@ footer p {
     align-items: flex-start;
   }
   #playButton, #resetButton {
-    font-size:1rem;
+    font-size:2em;
     width:25vw;
   }
   footer{
@@ -350,6 +352,7 @@ footer p {
   #rocks {
     width:100%;
     height:100%;
+    padding:25px;
   }
   #sidebar {
     display:flex;
@@ -360,5 +363,11 @@ footer p {
   .rock {
     width:10vw;
     height:8vw;
+  }
+  #buttons {
+    justify-self: end;
+  }
+  #playButton, #resetButton {
+    width:25%;
   }
 }
