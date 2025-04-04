@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--text-color);
+  font-size:0.65vw;
 }
 #main-container {
   display: grid;
@@ -17,12 +18,12 @@ body {
   margin: 0px 15vh 5vh 15vh;
 }
 header {
-  background-color: #4A4A4A;
   margin-top:1em;
   padding:2.5em;
   grid-column: 1 ;
   grid-row: 1;
-  border-radius: 5px;
+  background-color: #8c5e35;
+  border-radius: 15px;
   box-shadow: 0px 10px 15px #000;
   width:fit-content;
 }
@@ -41,19 +42,37 @@ h1 {
 h1 span {
   color: #e66918;
 }
+#title {
+  display:flex;
+  align-content: center;
+  gap:1em;
+}
+#title img {
+  width:8em;
+}
 nav ul {
   display:flex;
   flex-direction: row;
   gap:6em;
   list-style: none;
   justify-content: center;
-  
+}
+nav ul li {
+  text-align: center;
+  align-content: center;
+  background-color: var(--text-color);
+  width:12em;
+  height:4em;
+  margin:0 auto;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 10px 15px #000;
 }
 nav ul li a {
   font-size:2em;
-  color:var(--text-color);
-  
+  color:var(--jacket-blue);
   border-radius: 5px;
+  text-decoration: none;
 }
 main {
   grid-column: 1 / -1;
@@ -66,22 +85,29 @@ main {
   margin: 5vh 0vh 5vh 0vh;
   column-gap: 6vh;
   background-color: #8c5e35;
-  padding:0px 10px 0px 10px;
-  border-radius: 5px;
+  padding:0px 20px 0px 20px;
+  border-radius: 15px;
   box-shadow: 0px 10px 15px #000;
 }
-
 #main-text {
   grid-column: 1;
   grid-row: 1;
   padding: 20px;
   align-items: center;
 }
+#main-text h2 {
+  color:var(--text-color);
+  font-size: 3em;
+  font-weight: 900;
+}
 #main-text p {
+  color: var(--text-color);
   font-size: 1.5em;
   font-family: Georgia, "Times New Roman", Times, serif;
 }
-
+#main-text a {
+  color:var(--jacket-blue);
+}
 /* Move image to second column */
 #mr-arkansas {
   align-self: end;
@@ -94,7 +120,6 @@ main {
   padding-left: 15px;
 }
 footer {
-  border: 1px solid black;
   border-radius: 15px;
   grid-column: 1 / -1;
   grid-row: 3;
@@ -102,10 +127,13 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 20px;
+  background-color: #8c5e35;
+  box-shadow: 0px 10px 15px #000;
 }
 footer p {
   font-size: 1.2em;
   text-align: center;
+  color: var(--text-color);
 }
 #copyright {
   align-self: flex-end;
