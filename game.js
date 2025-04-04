@@ -12,6 +12,7 @@ export function selectRock(rock, rowIndex, rows) {
     gameState.currentRow = gameState.selectedRocks === 0 ? -1 : rowIndex;
   } else {
     alert("You can only select rocks from one row at a time.");
+    return; 
   }
 }
 
@@ -62,7 +63,6 @@ export function resetGame(rows, updateUI) {
   gameState.currentRow = -1;
   gameState.currentPlayer = 1; // Reset to Player 1
 
-  // Ensure all rocks are unselected and visible
   rows.forEach(row => row.forEach(rock => {
     rock.classList.remove("selected");
     rock.style.display = "block"; 

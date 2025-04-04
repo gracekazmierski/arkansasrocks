@@ -6,7 +6,7 @@
     <metA name="description" content="Instructions for Arkansas Rocks Game">
     <meta name="author" content="Grace Kazmierski">
     <link rel="stylesheet" href="styles.css">
-    <script src="instructions.js" defer></script>
+    <script type="module" src="instructions.js" defer></script>
     <title>Arkansas Rocks: Instructions</title>
 </head>
 <body>
@@ -27,9 +27,82 @@
     <main id="instruction-main">
         <div id="slide-container">
             <p id="slide-text"></p>
+            <button id="next-button">Next</button>
           </div>
           <img src="images/mr-arkansas.png" alt="Mr. Arkansas" id="mr-arkansas" />
-          <button onclick="nextSlide()">Next</button>
+          <div id="play-area">
+          <div id="rocks">
+            <div id="row1" class="row">
+              <div
+                class="rock"
+                style="background-image: url('images/icecap-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/purple-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/orange-rock.png')"
+              ></div>
+            </div>
+            <div id="row2" class="row">
+              <div
+                class="rock"
+                style="background-image: url('images/iron-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/magenta-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/red-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/striped-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/purple-rock.png')"
+              ></div>
+            </div>
+            <div id="row3" class="row">
+              <div
+                class="rock"
+                style="background-image: url('images/striped-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/red-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/orange-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/iron-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/lilac-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/mango-rock.png')"
+              ></div>
+              <div
+                class="rock"
+                style="background-image: url('images/red-rock.png')"
+              ></div>
+            </div>
+          </div>
+          <div id="buttons">
+            <button id="mini-play">Play</button>
+            <button id="mini-reset">Reset</button>
+          </div></div>
     </main>
     <footer>
         <p>Game By: Grace Kazmierski <br><a href="mailto:gracekazzy@gmail.com">gracekazzy@gmail.com</a></p>
