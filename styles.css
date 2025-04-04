@@ -1,5 +1,5 @@
 :root {
-  --text-color: #D9D9D9;
+  --text-color: #ececec;
   --player-red: #b60101;
   --box-main: #1E2E3E;
   --jacket-blue: #1e2e3e;
@@ -9,7 +9,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--text-color);
-  font-size:0.65vw;
+  font-size:0.5vw;
 }
 #main-container {
   display: grid;
@@ -53,8 +53,10 @@ h1 span {
 nav ul {
   display:flex;
   flex-direction: row;
+  margin-top:1.5em;
   gap:6em;
   list-style: none;
+  padding:0;
   justify-content: center;
 }
 nav ul li {
@@ -93,6 +95,7 @@ main {
   grid-column: 1;
   grid-row: 1;
   padding: 20px;
+  font-size:1.25em;
   align-items: center;
 }
 #main-text h2 {
@@ -106,7 +109,7 @@ main {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 #main-text a {
-  color:var(--jacket-blue);
+  color:#ffebc5;
 }
 /* Move image to second column */
 #mr-arkansas {
@@ -131,10 +134,63 @@ footer {
   box-shadow: 0px 10px 15px #000;
 }
 footer p {
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: center;
   color: var(--text-color);
 }
+footer a {
+  color:#ffebc5;
+}
 #copyright {
   align-self: flex-end;
+}
+#slide-container {
+  grid-column: 2;
+  justify-self: stretch;   
+  align-self: start;
+  width: fit-content;                             
+  margin-top: 1em;
+  color: var(--text-color);
+  font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 3px solid white;          
+  border-radius: 20px;
+  padding: 1em 1.5em;
+  position: relative;
+  background-color: transparent;
+  box-shadow: 4px 4px 0 white;
+}
+#slide-container::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  transform: rotate(48deg);
+}
+#slide-container p {
+  width:100%;
+  font-size:1.25em;
+}
+#instruction-main {
+  display:grid;
+  grid-template-columns: 0.75fr 2fr;
+  grid-template-rows:auto auto;
+  column-gap:8em;
+}
+#instruction-main img {
+  margin-top:4em;
+  width:20em;
+  height: 90%;
+  object-fit: contain;
+  grid-column: 1;
+  grid-row: 1 / -1;      
+  align-self: end;      
+  justify-self: right;  
+  width: 25em;
+  transform: scaleX(1);
 }

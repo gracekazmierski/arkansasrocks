@@ -5,7 +5,11 @@
   --player-blue: #1b4d8f;
   --box-main: #1E2E3E;
 }
-
+#container {
+  display: grid;
+  grid-template-rows: 1fr auto; 
+  height: 100vh;                
+}
 * {
   box-sizing: border-box;
 }
@@ -18,11 +22,14 @@ body {
   padding: 0;
   background-color: var(--text-color);
 }
+main, header {
+  grid-row:1;
+}
 main {
   display: grid;
+  height:auto;
   grid-template-columns: 1fr 2.5fr 1fr;
   grid-template-rows: auto 3fr auto;
-  height: 90vh;
 }
 header {
   grid-row: 1;
@@ -47,7 +54,7 @@ h1 {
   font-family: "Bebas Neue", sans-serif;
   padding-top: 5px;
   margin: 0;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 900;
   letter-spacing: 3px;
   line-height: 1;
@@ -72,7 +79,7 @@ nav ul {
   padding-left: 5px;
 }
 nav ul li {
-  width: 10em;
+  width: 8em;
   height: 40px;
   align-content: center;
   background-color: #9b704d;
@@ -84,10 +91,10 @@ li a {
   color: var(--text-color);
   text-decoration: none;
   font-family: "Georgia", serif;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 #logo {
-  width: 125px;
+  width: 6em;
 }
 #icon1 {
   grid-row:2;
@@ -113,6 +120,7 @@ li a {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 #rocks {
+  padding:5em;
   margin: 0 auto;
   display: grid;
   grid-template-rows: repeat(3, min-content); 
@@ -144,7 +152,7 @@ li a {
   align-content: center;
 }
 .rock {
-  width: 6vw;
+  width: 5vw;
   height: 4vw;
   padding: 10px;
   cursor: pointer;
@@ -183,9 +191,9 @@ li a {
   background-color:var(--player-red);
 }
 footer {
+  grid-row:2;
   font:'Georgia', serif;
   width:100%;
-  position:fixed;
   bottom:0;
   height:fit-content;
   display: flex;
@@ -194,60 +202,62 @@ footer p {
   font-size:1em;
   padding-left:5px;
   margin:0;
+  align-self: end;
 }
 #status {
   visibility: hidden;
 }
 #copyright {
-  position:fixed;
-  bottom:0;
-  right:0;
-  padding-right:10px;
+  margin-left: auto;
+  text-align: right;
 }
 
 @media screen and (max-width: 768px) {
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  }
+  main, header {
+    grid-row:1;
   }
   main {
     grid-template-columns: 10px auto 10px;
     grid-template-rows: auto 3fr 1fr;
     padding:0;
+    height:100%;
     margin:0 auto;
-    max-width: 100%;
   }
   header {
     margin: 10px auto;
-    width: 80%;
+    width: 90%;
     justify-content: center;
+    align-items: center;
     grid-column: 2;
     height:fit-content;
-    padding:0;
-    margin-bottom:20px;
+    padding:1vw;
+    margin-bottom:5vw;
   }
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    padding-bottom: 1vw;
   }
   nav ul li {
     box-shadow: 0px 5px 6px #000;
-    width:20vw;
-
+    width:18vw;
+    height:fit-content;
+    padding:1vw 0px 1vw 0px;
+    margin:0 auto;
   }
   nav ul li a {
     font-size:3vw;
-  }
-  header div {
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left:10px;
+    text-align: center;
   }
   h1 {
-    font-size:40px;
+    font-size:10vw;
+    text-align: center;
   }
   #logo {
-    width:50px;
+    width: 22.5%;
   }
   #sidebar {
     display:none;
@@ -258,7 +268,7 @@ footer p {
   #rocks {
     grid-column:2;
     grid-row:2;
-    width:90%;
+    width:85vw;
     grid-row:2;
     height:70%;
     align-self: center;
@@ -300,21 +310,27 @@ footer p {
     grid-row: 3;
     grid-column: 2;
     margin:0 auto;
-    padding-top:3vw;
+    padding-top:2vw;
     justify-content: center;
     align-items: flex-start;
   }
   #playButton, #resetButton {
-    font-size:2em;
+    font-size:5vw;
     width:25vw;
   }
-  footer{
+  footer {
     background-color: #d0d0d0; 
     width:100%;
     padding-top:3px;
+    position: relative;
     margin:0;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    grid-row:2;
+  }
+  footer p {
+    font-size:2.5vw;
   }
   #copyright {
     margin:0;
@@ -324,7 +340,7 @@ footer p {
 @media screen and (min-width: 768px) and (max-width: 1300px) {
   main {
     grid-template-columns: 1fr 3fr 1fr;
-    height:80%;
+    height:100%;
   }
   #icon1 {
     top:10px;
@@ -361,7 +377,7 @@ footer p {
     justify-content: flex-end;
   }
   .rock {
-    width:10vw;
+    width:8vw;
     height:8vw;
   }
   #buttons {

@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <metA name="description" content="Instructions for Arkansas Rocks Game">
     <meta name="author" content="Grace Kazmierski">
+    <link rel="stylesheet" href="styles.css">
+    <script src="instructions.js" defer></script>
     <title>Arkansas Rocks: Instructions</title>
 </head>
 <body>
+    <div id="main-container">
     <header>
-
-    </header>
-    <main>
-
+        <div id="title">
+          <img src="images/logo.png" alt="Arkansas Rocks Logo" id="logo" />
+          <h1>ARKANSAS<br><span>ROCKS!</span></h1>
+        </div>
+          <nav>
+              <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="game.html">Play</a></li>
+              <li><a href="index.html">Game History</a></li>
+              </ul>
+          </nav>
+      </header>
+    <main id="instruction-main">
+        <div id="slide-container">
+            <p id="slide-text"></p>
+          </div>
+          <img src="images/mr-arkansas.png" alt="Mr. Arkansas" id="mr-arkansas" />
+          <button onclick="nextSlide()">Next</button>
     </main>
     <footer>
-        
+        <p>Game By: Grace Kazmierski <br><a href="mailto:gracekazzy@gmail.com">gracekazzy@gmail.com</a></p>
+      <p id="copyright">Copyright &copy; 2025</p>
     </footer>
+    </div>
 </body>
 </html>
