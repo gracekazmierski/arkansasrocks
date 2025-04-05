@@ -112,6 +112,9 @@ main {
 #main-text a {
   color:#ffebc5;
 }
+#mobile-header {
+  display:none;
+}
 #mr-arkansas {
   align-self: end;
   height: 100%;
@@ -302,6 +305,15 @@ footer a {
   align-self: end;
   padding: 2em;
 }
+figure {
+  text-align: center;
+  margin: 1em auto;
+}
+figcaption {
+  font-size: 1.5em;
+  color: var(--text-color);
+  margin-top:-0.75em;
+}
 @media (min-width:800px) and (max-width: 1200px) {
   #main-container {
     margin: 0 2vw 0vh 2vw; 
@@ -321,6 +333,49 @@ footer a {
   footer {
     font-size:2em;
     padding:1em;
+  }
+  main {
+    column-gap:3em;
+  }
+  #main-text p {
+    font-size:2.5em;
+  }
+  #mr-arkansas {
+    object-fit: contain;
+    width:40em;
+  }
+  figcaption {
+    font-size: 2.5em;
+    color: var(--text-color);
+    margin-top:0em;
+  }
+  #slide-container p {
+    font-size:2.25em;
+  }
+  #instruction-main img {
+    width: 40em;
+    height: 80em;
+    grid-column: 1;
+    grid-row: 1 / -1;      
+    align-self: end;      
+    justify-self: right;  
+    transform: scaleX(1);
+  }
+  #rocks {
+    width:40vw;
+    height:15vw;
+  }
+  .rock {
+    width: 3vw;
+    height: 3vw;
+    padding: 10px;
+  }
+  #mini-play, #mini-reset {
+    font-size: 4em; 
+    width: 5em;
+  }
+  #next-button {
+    font-size: 2.5em;
   }
 }
 @media (max-width: 800px) {
@@ -373,7 +428,7 @@ footer a {
     max-width: 100%;
   }
   #about-text {
-    font-size: 1.2em;
+    font-size: 0.85em;
     padding: 0 1em;
     text-align: left;
   }
@@ -381,8 +436,106 @@ footer a {
   font-size: 1.2em;
   line-height: 1.6;
   }
-  footer {
-    font-size:0.75em;
+  figcaption {
+    font-size:1em;
   }
-
+  footer {
+    font-size:0.65em;
+  }
+  main {
+    column-gap:0;
+    grid-template-rows:auto 1fr;
+    grid-template-columns:1fr auto;
+  }
+  #main-text h2 {
+    display:none;
+  }
+  #mobile-header {
+    display:block;
+    grid-row:1;
+    grid-column:1;
+    text-align: center;
+    color:var(--text-color);
+    font-size:3em;
+  }
+  #main-text {
+    grid-row:2;
+    grid-column: 1 / -1;
+  }
+  #main-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    padding: 0 1em;
+  }
+  #mr-arkansas {
+    width: 8em;
+    height: auto;
+    margin: 10px auto;
+    padding: 0;
+    align-self: start;
+  }
+  #instruction-main {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  #instruction-main img {
+    display:none;
+  }
+  #slide-container {
+    margin:0;
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0.5em;
+    font-size:1em;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+  }
+  #slide-container::after {
+    content: none;
+  }
+  #slide-text {
+    padding:0;
+  }
+  #slide-container p {
+    font-size: 1.25em;
+  }
+  #next-button {
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+  }
+  #play-area {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+  }
+  #rocks {
+    width:20em;
+    border-radius:0;
+    min-width:100%;
+    height:20vw;
+  }
+  .rock {
+    width: clamp(1.5em, 6vw, 3em);
+    height: clamp(1em, 2vw, 2em);
+    max-width: 100%;
+    max-height: 100%;
+  }
+  #buttons {
+    align-self: center;
+  }
+  #mini-play, #mini-reset {
+    font-size: 2em; 
+  }
 }

@@ -4,6 +4,7 @@
   --player-red: #b60101;
   --player-blue: #1b4d8f;
   --box-main: #1E2E3E;
+  --jacket-blue: #1e2e3e;
 }
 #container {
   display: grid;
@@ -42,7 +43,7 @@ header {
   width: fit-content;
   border-radius: 5px;
   box-shadow: 0px 10px 15px #000;
-  background-color: #4a4a4a;
+  background-color: #8c5e35;
 }
 header div {
   display: flex;
@@ -82,13 +83,13 @@ nav ul li {
   width: 8em;
   height: 40px;
   align-content: center;
-  background-color: #9b704d;
+  background-color: var(--text-color);
   border-radius: 5px;
   box-shadow: 0px 10px 15px #000;
   cursor: pointer;
 }
 li a {
-  color: var(--text-color);
+  color: var(--jacket-color);
   text-decoration: none;
   font-family: "Georgia", serif;
   font-size: 1.25em;
@@ -213,6 +214,10 @@ footer p {
 }
 
 @media screen and (max-width: 768px) {
+  html {
+    font-size: clamp(12px, 2.5vw, 16px);
+    overflow-y: scroll;
+  }  
   * {
     margin: 0;
     padding: 0;
