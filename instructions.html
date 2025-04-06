@@ -1,113 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <metA name="description" content="Instructions for Arkansas Rocks Game">
-    <meta name="author" content="Grace Kazmierski">
-    <link rel="stylesheet" href="styles.css">
-    <script type="module" src="instructions.js" defer></script>
-    <title>Arkansas Rocks: Instructions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instructions for Arkansas Rocks Game">
+  <meta name="author" content="Grace Kazmierski">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="instructions.js" defer></script>
+  <link rel="icon" type="image/webp" href="images/logo.webp">
+  <title>Arkansas Rocks: Instructions</title>
 </head>
 <body>
-    <div id="main-container">
+  <div id="main-container">
     <header>
-        <div id="title">
+      <div id="title">
+        <picture>
+          <source srcset="images/logo.webp" type="image/webp">
           <img src="images/logo.png" alt="Arkansas Rocks Logo" id="logo" />
-          <h1>ARKANSAS<br><span>ROCKS!</span></h1>
-        </div>
-          <nav>
-              <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="game.html">Play</a></li>
-              <li><a href="game-history.html">Game History</a></li>
-              </ul>
-          </nav>
-      </header>
+        </picture>
+        <h1>ARKANSAS<br><span>ROCKS!</span></h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="game.html">Play</a></li>
+          <li><a href="game-history.html">Game History</a></li>
+        </ul>
+      </nav>
+    </header>
+
     <main id="instruction-main">
-      <img src="images/mr-arkansas.png" alt="Mr. Arkansas" id="mr-arkansas" />
-        <div id="slide-container">
-            <p id="slide-text"></p>
-            <button id="next-button">Next</button>
+      <picture>
+        <source srcset="images/mr-arkansas.webp" type="image/webp">
+        <img src="images/mr-arkansas.png" alt="Mr. Arkansas" id="mr-arkansas" />
+      </picture>
+
+      <div id="slide-container">
+        <p id="slide-text"></p>
+        <button id="next-button">Next</button>
+      </div>
+
+      <div id="play-area">
+        <div id="rocks">
+          <div id="row1" class="row">
+            <div class="rock rock-icecap"></div>
+            <div class="rock rock-purple"></div>
+            <div class="rock rock-orange"></div>
           </div>
-          <div id="play-area">
-          <div id="rocks">
-            <div id="row1" class="row">
-              <div
-                class="rock"
-                style="background-image: url('images/icecap-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/purple-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/orange-rock.png')"
-              ></div>
-            </div>
-            <div id="row2" class="row">
-              <div
-                class="rock"
-                style="background-image: url('images/iron-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/magenta-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/red-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/striped-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/purple-rock.png')"
-              ></div>
-            </div>
-            <div id="row3" class="row">
-              <div
-                class="rock"
-                style="background-image: url('images/striped-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/red-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/orange-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/iron-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/lilac-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/mango-rock.png')"
-              ></div>
-              <div
-                class="rock"
-                style="background-image: url('images/red-rock.png')"
-              ></div>
-            </div>
+          <div id="row2" class="row">
+            <div class="rock rock-iron"></div>
+            <div class="rock rock-magenta"></div>
+            <div class="rock rock-red"></div>
+            <div class="rock rock-striped"></div>
+            <div class="rock rock-purple"></div>
           </div>
-          <div id="buttons">
-            <button id="mini-play">Play</button>
-            <button id="mini-reset">Reset</button>
-          </div></div>
+          <div id="row3" class="row">
+            <div class="rock rock-striped"></div>
+            <div class="rock rock-red"></div>
+            <div class="rock rock-orange"></div>
+            <div class="rock rock-iron"></div>
+            <div class="rock rock-lilac"></div>
+            <div class="rock rock-mango"></div>
+            <div class="rock rock-red"></div>
+          </div>
+        </div>
+
+        <div id="buttons">
+          <button id="mini-play">Play</button>
+          <button id="mini-reset">Reset</button>
+        </div>
+      </div>
     </main>
+
     <footer>
-        <p>Game By: Grace Kazmierski <br><a href="mailto:gracekazzy@gmail.com">gracekazzy@gmail.com</a></p>
+      <p>Game By: Grace Kazmierski <br><a href="mailto:gracekazzy@gmail.com">gracekazzy@gmail.com</a></p>
       <p id="copyright">Copyright &copy; 2025</p>
     </footer>
-    </div>
+  </div>
 </body>
 </html>

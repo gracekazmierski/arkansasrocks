@@ -63,7 +63,6 @@ h1 {
   text-shadow: -3px -3px 0 var(--box-main), 3px -3px 0 var(--box-main),
     -3px 3px 0 var(--box-main), 3px 3px 0 var(--box-main);
 }
-
 h1 span {
   color: #e66918;
 }
@@ -120,6 +119,43 @@ li a {
 #icon2 {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
+.rock-icecap {
+  background-image: image-set(url('images/icecap-rock.webp') type('image/webp'),
+                              url('images/icecap-rock.png') type('image/png'));
+}
+.rock-purple {
+  background-image: image-set(url('images/purple-rock.webp') type('image/webp'),
+                              url('images/purple-rock.png') type('image/png'));
+}
+.rock-orange {
+  background-image: image-set(url('images/orange-rock.webp') type('image/webp'),
+                              url('images/orange-rock.png') type('image/png'));
+}
+.rock-iron {
+  background-image: image-set(url('images/iron-rock.webp') type('image/webp'),
+                              url('images/iron-rock.png') type('image/png'));
+}
+.rock-magenta {
+  background-image: image-set(url('images/magenta-rock.webp') type('image/webp'),
+                              url('images/magenta-rock.png') type('image/png'));
+}
+.rock-red {
+  background-image: image-set(url('images/red-rock.webp') type('image/webp'),
+                              url('images/red-rock.png') type('image/png'));
+}
+.rock-striped {
+  background-image: image-set(url('images/striped-rock.webp') type('image/webp'),
+                              url('images/striped-rock.png') type('image/png'));
+}
+.rock-lilac {
+  background-image: image-set(url('images/lilac-rock.webp') type('image/webp'),
+                              url('images/lilac-rock.png') type('image/png'));
+}
+.rock-mango {
+  background-image: image-set(url('images/mango-rock.webp') type('image/webp'),
+                              url('images/mango-rock.png') type('image/png'));
+}
+
 #rocks {
   padding:5em;
   margin: 0 auto;

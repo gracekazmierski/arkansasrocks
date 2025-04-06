@@ -199,14 +199,52 @@ footer a {
   row-gap:4em;
   column-gap:8em;
 }
-#instruction-main img {
+#instruction-main picture {
+  grid-row:1 / -1;
+  justify-self: end;
+  align-self: end;
+}
+#instruction-main picture img {
   width:30em;
-  height:60em;
-  grid-column: 1;
-  grid-row: 1 / -1;      
-  align-self: end;      
+  height:60em;   
   justify-self: right;  
   transform: scaleX(1);
+}
+.rock-icecap {
+  background-image: image-set(url('images/icecap-rock.webp') type('image/webp'),
+                              url('images/icecap-rock.png') type('image/png'));
+}
+.rock-purple {
+  background-image: image-set(url('images/purple-rock.webp') type('image/webp'),
+                              url('images/purple-rock.png') type('image/png'));
+}
+.rock-orange {
+  background-image: image-set(url('images/orange-rock.webp') type('image/webp'),
+                              url('images/orange-rock.png') type('image/png'));
+}
+.rock-iron {
+  background-image: image-set(url('images/iron-rock.webp') type('image/webp'),
+                              url('images/iron-rock.png') type('image/png'));
+}
+.rock-magenta {
+  background-image: image-set(url('images/magenta-rock.webp') type('image/webp'),
+                              url('images/magenta-rock.png') type('image/png'));
+}
+.rock-red {
+  background-image: image-set(url('images/red-rock.webp') type('image/webp'),
+                              url('images/red-rock.png') type('image/png'));
+}
+.rock-striped {
+  background-image: image-set(url('images/striped-rock.webp') type('image/webp'),
+                              url('images/striped-rock.png') type('image/png'));
+}
+.rock-lilac {
+  background-image: image-set(url('images/lilac-rock.webp') type('image/webp'),
+                              url('images/lilac-rock.png') type('image/png'));
+}
+.rock-mango {
+  background-image: image-set(url('images/mango-rock.webp') type('image/webp'),
+                              url('images/mango-rock.png') type('image/png'));
 }
 #rocks {
   justify-self: start;
@@ -220,8 +258,8 @@ footer a {
   gap: 15px; 
   background-color: #c48752da;
   border-radius:30px;
-  grid-row: 2;
   grid-column:2;
+  grid-row: 2;
 }
 .rock:hover {
   transform: scale(1.1); 
@@ -269,6 +307,8 @@ footer a {
   background-color: var(--player-red);
 }
 #play-area {
+  grid-row:2;
+  grid-column:2;
   display:flex;
   flex-direction: column;
   gap:2em;
